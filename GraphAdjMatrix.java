@@ -5,7 +5,7 @@ public class GraphAdjMatrix implements Graph {
     int vertices;
     int edges;
     int adjMatrix[][];
-    int newAdjMatrix[][];
+//    int newAdjMatrix[][];
 
     /*
      *  weight - the weight for the edge of the MST
@@ -16,6 +16,23 @@ public class GraphAdjMatrix implements Graph {
         int parent;
     }
 
+    class Graph{
+
+        int vertices;
+        int newAdjMatrix[][];
+        int weight;
+
+        Graph(int vertices, int weight){
+
+            this.weight = weight;
+            this.vertices = vertices;
+            newAdjMatrix = new int[vertices][vertices];
+            for(int i=0; i<vertices; i++)
+                for(int k=0; k<vertices; k++)
+                    newAdjMatrix[i][k] = weight;
+        }
+    }
+
     /**
      * Constructor for a Matrix in creation of the Minimum Spanning Tree
      *
@@ -24,6 +41,7 @@ public class GraphAdjMatrix implements Graph {
     public GraphAdjMatrix(int vertices){
         if(vertices<0)
             throw new IllegalArgumentException();
+        Graph g = new Graph(vertices, edges);
         this.vertices = vertices;
         this.edges = 0;
         adjMatrix = new int[vertices][vertices];
