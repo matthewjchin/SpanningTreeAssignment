@@ -5,11 +5,11 @@ public class GraphAdjMatrix implements Graph {
     int vertices;
     int edges;
     int adjMatrix[][];
-//    int newAdjMatrix[][];
+
 
     /*
      *  weight - the weight for the edge of the MST
-     *  parent -
+     *  parent - the primary vertex that was belonged to prior to path
      */
     class Results{
         int weight;
@@ -58,9 +58,9 @@ public class GraphAdjMatrix implements Graph {
     /**
      * Add an edge to the graph with an emphasis on weight of connection of two vertices
      *
-     * @param v1 one of the vertices in connection
-     * @param v2 the other vertex in connection
-     * @param weight the value of strength of the edge for this connection
+     * @param v1: one of the vertices in connection
+     * @param v2: the other vertex in connection
+     * @param weight: the value of strength of the edge for this connection
      */
     @Override
     public void addEdge(int v1, int v2, int weight) {
@@ -80,8 +80,8 @@ public class GraphAdjMatrix implements Graph {
     /**
      * Get the edge between two vertices
      *
-     * @param v1 the first vertex in connection to another vertex
-     * @param v2 other vertex in connection to original vertex
+     * @param v1: the first vertex in connection to another vertex
+     * @param v2: other vertex in connection to original vertex
      * @return the value of weight of edge between two vertices; 0 if otherwise not present
      */
     @Override
@@ -144,8 +144,8 @@ public class GraphAdjMatrix implements Graph {
     /**
      * Retrieve the minimum value of the vertex
      *
-     * @param minSpanTree MST of true and false statements
-     * @param keys the values of the
+     * @param minSpanTree: MST of true and false statements
+     * @param keys: the values of the spanning tree
      * @return the minimum vertex
      */
     public int getMinVertex(boolean[] minSpanTree, int[] keys){
